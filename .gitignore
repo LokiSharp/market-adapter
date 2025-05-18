@@ -1,0 +1,60 @@
+# Devbox
+.devbox/
+
+# uv / Python Virtual Environment
+.venv/
+*.pyc
+__pycache__/
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+*.log
+
+# Nix (如果您直接使用 Nix Flakes 或相关工具，这些也可能出现)
+result*
+flake.lock # 如果您在项目根目录也使用了 flake.nix
+.direnv/ # 如果使用 direnv 配合 Nix
+
+# IDE / Editor specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# macOS specific
+.DS_Store
+._*
+
+# Windows specific
+Thumbs.db
+
+# Secrets / Sensitive Configuration (确保您的敏感信息不被提交)
+.env
+config.yaml # 如果您的配置文件包含敏感信息，请取消注释
+# *.pem
+# *.key
+
+# Jupyter Notebook Checkpoints (如果使用)
+.ipynb_checkpoints/
+
+# Test output / coverage reports
+htmlcov/
+.coverage
+.pytest_cache/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+
+# Wheel files (如果您在本地构建)
+*.whl
+
+# Logs
+logs/
+*.log
+
+# Other
+*.bak
+*.tmp

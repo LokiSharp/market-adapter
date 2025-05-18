@@ -1,0 +1,7 @@
+[project]
+name = "market-adapter"
+version = "0.1.0"
+description = "My Market Adapter"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
