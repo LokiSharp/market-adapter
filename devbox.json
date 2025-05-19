@@ -19,7 +19,13 @@
     ],
     "scripts": {
       "test": [
-        "echo \"Error: no test specified\" && exit 1"
+        "uv run pytest"
+      ],
+      "lint": [
+        "uv run ruff check ."
+      ],
+      "typecheck": [
+        "uv run mypy ."
       ]
     }
   }

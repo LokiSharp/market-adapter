@@ -12,10 +12,10 @@ build/
 *.egg
 *.log
 
-# Nix (如果您直接使用 Nix Flakes 或相关工具，这些也可能出现)
+# Nix
 result*
-flake.lock # 如果您在项目根目录也使用了 flake.nix
-.direnv/ # 如果使用 direnv 配合 Nix
+flake.lock
+.direnv/
 
 # IDE / Editor specific files
 .vscode/
@@ -30,13 +30,13 @@ flake.lock # 如果您在项目根目录也使用了 flake.nix
 # Windows specific
 Thumbs.db
 
-# Secrets / Sensitive Configuration (确保您的敏感信息不被提交)
+# Secrets / Sensitive Configuration
 .env
-config.yaml # 如果您的配置文件包含敏感信息，请取消注释
+config.yaml
 # *.pem
 # *.key
 
-# Jupyter Notebook Checkpoints (如果使用)
+# Jupyter Notebook Checkpoints
 .ipynb_checkpoints/
 
 # Test output / coverage reports
@@ -47,8 +47,15 @@ htmlcov/
 nosetests.xml
 coverage.xml
 *.cover
+*.db
 
-# Wheel files (如果您在本地构建)
+# ruff cache
+.ruff_cache/
+# mypy cache
+.mypy_cache/
+
+# Wheel f
+iles
 *.whl
 
 # Logs

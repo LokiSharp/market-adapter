@@ -4,4 +4,23 @@ version = "0.1.0"
 description = "My Market Adapter"
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "aiohttp>=3.11.18",
+    "alembic>=1.15.2",
+    "asyncpg>=0.30.0",
+    "fastapi>=0.115.12",
+    "longport>=3.0.4",
+    "python-dotenv>=1.1.0",
+    "pyyaml>=6.0.2",
+    "sqlmodel>=0.0.24",
+    "types-pyyaml>=6.0.12.20250516",
+    "websockets>=15.0.1",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.15.0",
+    "pytest>=8.3.5",
+    "pytest-asyncio>=0.26.0",
+    "ruff>=0.11.10",
+]
