@@ -8,9 +8,6 @@ import pytest
 @pytest.fixture
 def temp_project_env(monkeypatch):
     orig_cwd = os.getcwd()
-    project_root = Path(__file__).parent.parent
-    if str(project_root) not in sys.path:
-        sys.path.insert(0, str(project_root))
     with tempfile.TemporaryDirectory() as tmpdir:
         # 切换目录
         monkeypatch.chdir(tmpdir)
@@ -18,10 +15,6 @@ def temp_project_env(monkeypatch):
         monkeypatch.delenv("LONGPORT_APP_KEY", raising=False)
         monkeypatch.delenv("LONGPORT_APP_SECRET", raising=False)
         monkeypatch.delenv("LONGPORT_ACCESS_TOKEN", raising=False)
-        # 修正 sys.path
-        project_root = Path(__file__).parent.parent
-        if str(project_root) not in sys.path:
-            sys.path.insert(0, str(project_root))
         yield tmpdir
         os.chdir(orig_cwd)
 

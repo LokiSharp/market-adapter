@@ -22,8 +22,12 @@ dev = [
     "mypy>=1.15.0",
     "pytest>=8.3.5",
     "pytest-asyncio>=0.26.0",
+    "pytest-cov>=6.1.1",
     "ruff>=0.11.10",
 ]
 
 [tool.pytest.ini_options]
 asyncio_default_fixture_loop_scope = "function"
+
+[tool.coverage.run]
+omit = ["*/conftest.py", "main.py","*/__pycache__/*", "*/tests/*"]
