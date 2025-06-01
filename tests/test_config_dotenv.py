@@ -6,7 +6,7 @@ import pytest
 
 
 @pytest.fixture
-def temp_project_env(monkeypatch):
+def temp_project_env(monkeypatch: pytest.MonkeyPatch):
     orig_cwd = os.getcwd()
     with tempfile.TemporaryDirectory() as tmpdir:
         # 切换目录
@@ -30,7 +30,7 @@ def reload_config():
     return LONGPORT_APP_KEY, LONGPORT_APP_SECRET, LONGPORT_ACCESS_TOKEN
 
 
-def test_dotenv_loading(temp_project_env):
+def test_dotenv_loading(temp_project_env: str):
     tmpdir = temp_project_env
     env_path = Path(tmpdir) / ".env"
     env_content = (
@@ -45,7 +45,7 @@ def test_dotenv_loading(temp_project_env):
     assert token == "test_token"
 
 
-def test_yaml_loading(temp_project_env):
+def test_yaml_loading(temp_project_env: str):
     tmpdir = temp_project_env
     yaml_path = Path(tmpdir) / "config.yml"
     yaml_content = """
@@ -60,7 +60,7 @@ LONGPORT_ACCESS_TOKEN: yaml_token
     assert token == "yaml_token"
 
 
-def test_env_overrides_yaml(temp_project_env, monkeypatch):
+def test_env_overrides_yaml(temp_project_env: str, monkeypatch: pytest.MonkeyPatch):
     tmpdir = temp_project_env
     yaml_path = Path(tmpdir) / "config.yml"
     yaml_content = """
@@ -78,7 +78,7 @@ LONGPORT_ACCESS_TOKEN: yaml_token
     assert token == "env_token"
 
 
-def test_default_values(temp_project_env):
+def test_default_values(temp_project_env: str):
     key, secret, token = reload_config()
     assert key == ""
     assert secret == ""

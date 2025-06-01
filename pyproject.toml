@@ -31,3 +31,7 @@ asyncio_default_fixture_loop_scope = "function"
 
 [tool.coverage.run]
 omit = ["*/conftest.py", "main.py","*/__pycache__/*", "*/tests/*"]
+
+[tool.ruff.lint]
+select = ["E", "F", "TCH"]
+typing-modules = ["typing", "typing_extensions"]
