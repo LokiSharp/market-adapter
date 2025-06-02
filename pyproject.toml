@@ -26,8 +26,13 @@ dev = [
     "ruff>=0.11.10",
 ]
 
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
 [tool.pytest.ini_options]
 asyncio_default_fixture_loop_scope = "function"
+pythonpath = ["src"]
 
 [tool.coverage.run]
 omit = ["*/conftest.py", "main.py","*/__pycache__/*", "*/tests/*"]
